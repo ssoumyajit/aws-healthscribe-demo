@@ -11,6 +11,8 @@ import {
 
 import { getConfigRegion, getCredentials, printTiming } from '@/utils/Sdk';
 
+import { LanguageCode, StartMedicalScribeJobRequest } from '@aws-sdk/client-transcribe';
+
 async function getTranscribeClient() {
     return new TranscribeClient({
         region: getConfigRegion(),
@@ -85,6 +87,24 @@ async function deleteHealthScribeJob({ MedicalScribeJobName }: DeleteHealthScrib
 async function startMedicalScribeJob(startMedicalScribeJobParams: StartMedicalScribeJobRequest) {
     const start = performance.now();
     const transcribeClient = await getTranscribeClient();
+
+    // Set the language code based on the language parameter
+    // switch (language) {
+        // case 'en':
+            // startMedicalScribeJobParams.LanguageCode = LanguageCode.EN_US;
+            // break;
+        // case 'zh-tw':
+            // startMedicalScribeJobParams.LanguageCode = LanguageCode.TW_MANDARIN;
+            // break;
+        // case 'zh-cn':
+            // startMedicalScribeJobParams.LanguageCode = LanguageCode.ZH_CN;
+            // break;
+        // default:
+            // throw new Error('Invalid language code provided');
+    }
+    // Set the language code for the job (Taiwanese Mandarin)
+    startMedicalScribeJobParams.LanguageCode = LanguageCode.TW_MANDARIN;
+    
     const startMedicalScribeJobCmd = new StartMedicalScribeJobCommand(startMedicalScribeJobParams);
     const startMedicalScribeJobRsp = await transcribeClient.send(startMedicalScribeJobCmd);
 
