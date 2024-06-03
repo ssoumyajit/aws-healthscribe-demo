@@ -7,11 +7,10 @@ import {
     StartMedicalScribeJobCommand,
     StartMedicalScribeJobRequest,
     TranscribeClient,
+    LanguageCode,
 } from '@aws-sdk/client-transcribe';
 
 import { getConfigRegion, getCredentials, printTiming } from '@/utils/Sdk';
-
-import { LanguageCode, StartMedicalScribeJobRequest } from '@aws-sdk/client-transcribe';
 
 async function getTranscribeClient() {
     return new TranscribeClient({
