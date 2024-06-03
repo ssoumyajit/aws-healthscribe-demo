@@ -104,11 +104,6 @@ async function startMedicalScribeJob(startMedicalScribeJobParams: StartMedicalSc
     
     // Set the language code for the job (Taiwanese Mandarin)
     // startMedicalScribeJobParams.LanguageCode = 'zh-TW';
-    startMedicalScribeJobParams.Media = {
-        MediaSampleRateHertz: {
-            LanguageCode: 'zh-TW'
-        }
-    };
     
     const startMedicalScribeJobCmd = new StartMedicalScribeJobCommand(startMedicalScribeJobParams);
     const startMedicalScribeJobRsp = await transcribeClient.send(startMedicalScribeJobCmd);
