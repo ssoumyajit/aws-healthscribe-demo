@@ -4,6 +4,7 @@ import React, { Suspense, lazy, useEffect, useState } from 'react';
 
 import TopNavigation from '@cloudscape-design/components/top-navigation';
 import { TopNavigationProps } from '@cloudscape-design/components/top-navigation';
+import '@cloudscape-design/components/top-navigation/styles.css';
 import { Density, Mode, applyDensity, applyMode } from '@cloudscape-design/global-styles';
 
 import ModalLoader from '@/components/SuspenseLoader/ModalLoader';
@@ -25,6 +26,17 @@ export default function TopNav() {
     const { appTheme, setAppThemeColor, setAppThemeDensity } = useAppThemeContext();
 
     const [authVisible, setAuthVisible] = useState(false); // authentication modal visibility
+
+    const topNavigationStyles = {
+          container: {
+            backgroundColor: 'blue', // Set the background color of the container
+        },
+          identityLink: {
+            color: 'white', // Set the color of the identity link (e.g., the app title)
+        },
+          // Add more styles as needed
+    };
+
 
     // Set app appTheme
     useEffect(() => {
@@ -147,7 +159,7 @@ export default function TopNav() {
                     title: 'EBM Clinical record generation assistant',
                 }}
                 utilities={navUtils}
-                backgroundColor="#0096FF"
+                styles={topNavigationStyles}
             />
         </>
     );
