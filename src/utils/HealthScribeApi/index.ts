@@ -87,7 +87,7 @@ async function startMedicalScribeJob(startMedicalScribeJobParams: StartMedicalSc
     const start = performance.now();
     const transcribeClient = await getTranscribeClient();
 
-    startMedicalScribeJobParams.LanguageCode = LanguageCode.ZH_TW
+    // startMedicalScribeJobParams.LanguageCode = LanguageCode.zh_TW
     // Set the language code based on the language parameter
     // switch (language) {
         // case 'en':
