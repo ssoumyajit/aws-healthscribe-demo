@@ -144,9 +144,10 @@ export default function TopNav() {
             <TopNavigation
                 identity={{
                     href: '/',
-                    title: 'Amazon Web Services',
+                    title: 'EBM Clinical record generation assistant',
                 }}
                 utilities={navUtils}
+                backgroundColor="#0096FF"
             />
         </>
     );
