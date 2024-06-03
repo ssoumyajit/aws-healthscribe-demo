@@ -101,7 +101,8 @@ async function startMedicalScribeJob(startMedicalScribeJobParams: StartMedicalSc
             // break;
         // default:
             // throw new Error('Invalid language code provided');
-    }
+    // }
+    
     // Set the language code for the job (Taiwanese Mandarin)
     startMedicalScribeJobParams.LanguageCode = LanguageCode.TW_MANDARIN;
     
